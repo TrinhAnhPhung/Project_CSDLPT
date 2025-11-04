@@ -56,17 +56,23 @@
     <Compile Include="Admin\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AdminMainDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMainDashboard.Designer.cs">
+      <DependentUpon>AdminMainDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\QuanLyNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\QuanLyNguoiDung.Designer.cs">
+      <DependentUpon>QuanLyNguoiDung.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\SearchStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin\SearchStudentForm.Designer.cs">
       <DependentUpon>SearchStudentForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\PhanQuyen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\PhanQuyen.Designer.cs">
-      <DependentUpon>PhanQuyen.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -137,8 +143,10 @@
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\DatabaseService.cs" />
     <Compile Include="Services\Login\DatabaseService.cs" />
+    <Compile Include="Services\MultiSiteService.cs" />
     <Compile Include="Services\ReportService.cs" />
     <Compile Include="Services\StudentService.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="Sinh Viên\Dangkyhocphan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,8 +177,8 @@
     <EmbeddedResource Include="Admin\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\PhanQuyen.resx">
-      <DependentUpon>PhanQuyen.cs</DependentUpon>
+    <EmbeddedResource Include="Admin\AdminMainDashboard.resx">
+      <DependentUpon>AdminMainDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

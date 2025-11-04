@@ -97,11 +97,35 @@ namespace QL_HP_DT_SV.Login
                 }
 
                 // Nếu tới đây: mở được kết nối bằng user/password + SP chạy OK => ĐĂNG NHẬP THÀNH CÔNG
-                var dashboard = new AdminDashboard();   // tạo form dashboard của bạn
-                dashboard.StartPosition = FormStartPosition.CenterScreen;
-                dashboard.Show();
+                
+                // Lưu thông tin session
+                Session.ConnectionString = connStr;
+                Session.CurrentUserName = username;
+                
+                // Kiểm tra quyền của user để xác định vai trò
+                string userRole = await GetUserRoleAsync(connStr, username);
+                Session.CurrentUserRole = userRole;
+                Session.IsAdmin = userRole == "db_owner" || userRole == "db_securityadmin";
 
-                this.Hide(); // ẩn form Login
+                // Hiển thị dashboard tương ứng với vai trò
+                if (Session.IsAdmin)
+                {
+                    var dashboard = new AdminMainDashboard();
+                    dashboard.StartPosition = FormStartPosition.CenterScreen;
+                    dashboard.Show();
+                    this.Hide(); // ẩn form Login
+                }
+                else
+                {
+                    // Mở AdminDashboard cho các role khác (có thể xem và quản lý sinh viên)
+                    MessageBox.Show($"Chào mừng {username}! Vai trò: {userRole}",
+                        "Đăng nhập thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    var dashboard = new AdminDashboard();
+                    dashboard.StartPosition = FormStartPosition.CenterScreen;
+                    dashboard.Show();
+                    this.Hide(); // ẩn form Login
+                }
             }
             catch (SqlException sqlEx)
             {
@@ -120,9 +144,43 @@ namespace QL_HP_DT_SV.Login
         {
 
         }
+
+        /// <summary>
+        /// Lấy vai trò của user từ database
+        /// </summary>
+        private async System.Threading.Tasks.Task<string> GetUserRoleAsync(string connStr, string userName)
+        {
+            const string sql = @"
+                SELECT TOP 1 r.name AS RoleName
+                FROM sys.database_role_members rm
+                INNER JOIN sys.database_principals r ON rm.role_principal_id = r.principal_id
+                INNER JOIN sys.database_principals m ON rm.member_principal_id = m.principal_id
+                WHERE m.name = @UserName
+                    AND r.type = 'R'
+                    AND r.name IN ('db_owner', 'db_securityadmin', 'db_accessadmin', 'db_datareader', 'db_datawriter')
+                ORDER BY CASE r.name
+                    WHEN 'db_owner' THEN 1
+                    WHEN 'db_securityadmin' THEN 2
+                    WHEN 'db_accessadmin' THEN 3
+                    ELSE 4
+                END";
+
+            try
+            {
+                using (var conn = new SqlConnection(connStr))
+                using (var cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@UserName", userName);
+                    await conn.OpenAsync();
+                    var result = await cmd.ExecuteScalarAsync();
+                    return result?.ToString() ?? "User";
+                }
+            }
+            catch
+            {
+                // Nếu không lấy được role, mặc định là User
+                return "User";
+            }
+        }
     }
-        
-
-
-    
 }

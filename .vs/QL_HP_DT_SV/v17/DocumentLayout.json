@@ -3,32 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|c:\\users\\asus\\source\\repos\\ql_hp_dt_sv\\ql_hp_dt_sv\\utils\\helpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|solutionrelative:ql_hp_dt_sv\\utils\\helpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\ql_hp_dt_sv\\admin\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|solutionrelative:ql_hp_dt_sv\\admin\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\ql_hp_dt_sv\\login\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|solutionrelative:ql_hp_dt_sv\\login\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|c:\\users\\asus\\source\\repos\\ql_hp_dt_sv\\ql_hp_dt_sv\\admin\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|solutionrelative:ql_hp_dt_sv\\admin\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|c:\\users\\asus\\source\\repos\\ql_hp_dt_sv\\ql_hp_dt_sv\\admin\\adminmaindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|solutionrelative:ql_hp_dt_sv\\admin\\adminmaindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\ql_hp_dt_sv\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|solutionrelative:ql_hp_dt_sv\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\ql_hp_dt_sv\\admin\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|solutionrelative:ql_hp_dt_sv\\admin\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\ql_hp_dt_sv\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|solutionrelative:ql_hp_dt_sv\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\ql_hp_dt_sv\\admin\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|solutionrelative:ql_hp_dt_sv\\admin\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\ql_hp_dt_sv\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|solutionrelative:ql_hp_dt_sv\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\ql_hp_dt_sv\\login\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|solutionrelative:ql_hp_dt_sv\\login\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\ql_hp_dt_sv\\utils\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|solutionrelative:ql_hp_dt_sv\\utils\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\ql_hp_dt_sv\\utils\\helpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|solutionrelative:ql_hp_dt_sv\\utils\\helpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\ql_hp_dt_sv\\login\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7536E760-BB4C-4A1A-9E9B-48ACFDBC88AD}|QL_HP_DT_SV\\QL_HP_DT_SV.csproj|solutionrelative:ql_hp_dt_sv\\login\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,58 +46,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "AdminMainDashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\Admin\\AdminMainDashboard.cs",
+              "RelativeDocumentMoniker": "QL_HP_DT_SV\\Admin\\AdminMainDashboard.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\Admin\\AdminMainDashboard.cs [Design]",
+              "RelativeToolTip": "QL_HP_DT_SV\\Admin\\AdminMainDashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T09:47:43.309Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "App.config",
               "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\App.config",
               "RelativeDocumentMoniker": "QL_HP_DT_SV\\App.config",
               "ToolTip": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\App.config",
               "RelativeToolTip": "QL_HP_DT_SV\\App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-11-03T13:30:46.101Z"
+              "WhenOpened": "2025-11-04T09:35:54.57Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Session.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\Utils\\Session.cs",
-              "RelativeDocumentMoniker": "QL_HP_DT_SV\\Utils\\Session.cs",
-              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\Utils\\Session.cs",
-              "RelativeToolTip": "QL_HP_DT_SV\\Utils\\Session.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T13:29:38.62Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "AdminDashboard.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\Admin\\AdminDashboard.cs",
               "RelativeDocumentMoniker": "QL_HP_DT_SV\\Admin\\AdminDashboard.cs",
               "ToolTip": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\Admin\\AdminDashboard.cs",
               "RelativeToolTip": "QL_HP_DT_SV\\Admin\\AdminDashboard.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAABQAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAL4BAAAAAAAAAIAwwMUBAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T10:36:08.106Z"
+              "WhenOpened": "2025-11-04T09:09:16.831Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "AdminDashboard.cs [Design]",
               "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\Admin\\AdminDashboard.cs",
               "RelativeDocumentMoniker": "QL_HP_DT_SV\\Admin\\AdminDashboard.cs",
               "ToolTip": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\Admin\\AdminDashboard.cs [Design]",
               "RelativeToolTip": "QL_HP_DT_SV\\Admin\\AdminDashboard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T10:06:24.486Z"
+              "WhenOpened": "2025-11-03T10:06:24.486Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "QL_HP_DT_SV\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\Services\\UserService.cs",
+              "RelativeToolTip": "QL_HP_DT_SV\\Services\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T09:30:03.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\Program.cs",
+              "RelativeDocumentMoniker": "QL_HP_DT_SV\\Program.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\Program.cs",
+              "RelativeToolTip": "QL_HP_DT_SV\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T09:27:34.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "LoginForm.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\Login\\LoginForm.cs",
               "RelativeDocumentMoniker": "QL_HP_DT_SV\\Login\\LoginForm.cs",
@@ -101,20 +135,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "Helpers.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\Utils\\Helpers.cs",
               "RelativeDocumentMoniker": "QL_HP_DT_SV\\Utils\\Helpers.cs",
               "ToolTip": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\Utils\\Helpers.cs",
               "RelativeToolTip": "QL_HP_DT_SV\\Utils\\Helpers.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T09:52:21.302Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-03T09:52:21.302Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "LoginForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\QL_HP_DT_SV\\QL_HP_DT_SV\\Login\\LoginForm.cs",
               "RelativeDocumentMoniker": "QL_HP_DT_SV\\Login\\LoginForm.cs",
