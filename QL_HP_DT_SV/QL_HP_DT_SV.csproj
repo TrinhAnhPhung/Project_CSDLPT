@@ -56,17 +56,29 @@
     <Compile Include="Admin\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\QuanLyNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\QuanLyNguoiDung.Designer.cs">
+      <DependentUpon>QuanLyNguoiDung.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\SearchStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin\SearchStudentForm.Designer.cs">
       <DependentUpon>SearchStudentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\PhanQuyen.cs">
+    <Compile Include="Admin\Site2Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\PhanQuyen.Designer.cs">
-      <DependentUpon>PhanQuyen.cs</DependentUpon>
+    <Compile Include="Admin\Site2Dashboard.Designer.cs">
+      <DependentUpon>Site2Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Site3Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Site3Dashboard.Designer.cs">
+      <DependentUpon>Site3Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -74,109 +86,27 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Giáo Vụ\Giaovudashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Giáo Vụ\Giaovudashboard.Designer.cs">
-      <DependentUpon>Giaovudashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Giáo Vụ\Phanconggiangvien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Giáo Vụ\Phanconggiangvien.Designer.cs">
-      <DependentUpon>Phanconggiangvien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Giáo Vụ\Quanlydanhsachhocphan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Giáo Vụ\Quanlydanhsachhocphan.Designer.cs">
-      <DependentUpon>Quanlydanhsachhocphan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Giáo Vụ\Quanlyhocphan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Giáo Vụ\Quanlyhocphan.Designer.cs">
-      <DependentUpon>Quanlyhocphan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Giảng Viên\Capnhatdiem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Giảng Viên\Capnhatdiem.Designer.cs">
-      <DependentUpon>Capnhatdiem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Giảng Viên\Danhsachlop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Giảng Viên\Danhsachlop.Designer.cs">
-      <DependentUpon>Danhsachlop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Giảng Viên\GianvienDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Giảng Viên\GianvienDashboard.Designer.cs">
-      <DependentUpon>GianvienDashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Giảng Viên\Nhapdiemthi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Giảng Viên\Nhapdiemthi.Designer.cs">
-      <DependentUpon>Nhapdiemthi.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Diem.cs" />
-    <Compile Include="Models\HocPhan.cs" />
     <Compile Include="Models\SinhVien.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AuthService.cs" />
-    <Compile Include="Services\DatabaseService.cs" />
-    <Compile Include="Services\Login\DatabaseService.cs" />
-    <Compile Include="Services\ReportService.cs" />
+    <Compile Include="Services\MultiSiteService.cs" />
     <Compile Include="Services\StudentService.cs" />
-    <Compile Include="Sinh Viên\Dangkyhocphan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sinh Viên\Dangkyhocphan.Designer.cs">
-      <DependentUpon>Dangkyhocphan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Sinh Viên\Sinhviendashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sinh Viên\Sinhviendashboard.Designer.cs">
-      <DependentUpon>Sinhviendashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Sinh Viên\Xemdiemhocphan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sinh Viên\Xemdiemhocphan.Designer.cs">
-      <DependentUpon>Xemdiemhocphan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Sinh Viên\Xemlichhoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sinh Viên\Xemlichhoc.Designer.cs">
-      <DependentUpon>Xemlichhoc.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\Helpers.cs" />
     <Compile Include="Utils\Session.cs" />
     <EmbeddedResource Include="Admin\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\PhanQuyen.resx">
-      <DependentUpon>PhanQuyen.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Giáo Vụ\Quanlyhocphan.resx">
-      <DependentUpon>Quanlyhocphan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -204,8 +134,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
