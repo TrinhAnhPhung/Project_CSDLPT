@@ -1,20 +1,18 @@
 ﻿using QL_HP_DT_SV.Admin;
 using QL_HP_DT_SV.Models;
 using QL_HP_DT_SV.Services;
-using QL_HP_DT_SV.Sinh_Viên;
 using QL_HP_DT_SV.Utils;
 using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace QL_HP_DT_SV.Login
 {
     public partial class LoginForm : Form
     {
-
-        private readonly AuthService _auth = new AuthService();
         public LoginForm()
         {
             InitializeComponent();
@@ -22,21 +20,82 @@ namespace QL_HP_DT_SV.Login
             btn_login.Click += tbn_Click;
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
+        private async void LoginForm_Load(object sender, EventArgs e)
         {
-            var baseConnStr = ConfigurationManager.ConnectionStrings["MyDB_Site1"].ConnectionString;
-            using (var conn = new SqlConnection(baseConnStr))
-            using (var cmd = new SqlCommand(
-                    "SELECT RTRIM(MaKhoa) AS MaKhoa, TenKhoa FROM dbo.Khoa ORDER BY TenKhoa", conn))
-            {
-                conn.Open();
-                var dt = new DataTable();
-                dt.Load(cmd.ExecuteReader());
+            // Load khoa từ cả 3 sites
+            await LoadKhoaFromAllSitesAsync();
+        }
 
-                cb_chonnganh.DisplayMember = "TenKhoa";
-                cb_chonnganh.ValueMember = "MaKhoa";   // đã là bản RTRIM
-                cb_chonnganh.DataSource = dt;
+        /// <summary>
+        /// Load danh sách khoa từ cả 3 sites
+        /// </summary>
+        private async System.Threading.Tasks.Task LoadKhoaFromAllSitesAsync()
+        {
+            try
+            {
+                var allKhoa = await MultiSiteService.GetAllKhoaFromAllSitesAsync();
+                
+                // Tạo DataTable để hiển thị với thông tin Site
+                var displayTable = new DataTable();
+                displayTable.Columns.Add("MaKhoa", typeof(string));
+                displayTable.Columns.Add("TenKhoa", typeof(string));
+                displayTable.Columns.Add("Site", typeof(string));
+                displayTable.Columns.Add("DisplayText", typeof(string));
+
+                foreach (DataRow row in allKhoa.Rows)
+                {
+                    var newRow = displayTable.NewRow();
+                    newRow["MaKhoa"] = row["MaKhoa"];
+                    newRow["TenKhoa"] = row["TenKhoa"];
+                    newRow["Site"] = row["Site"];
+                    newRow["DisplayText"] = $"{row["TenKhoa"]} ({row["Site"]})";
+                    displayTable.Rows.Add(newRow);
+                }
+
+                cb_chonnganh.DisplayMember = "DisplayText";
+                cb_chonnganh.ValueMember = "MaKhoa";
+                cb_chonnganh.DataSource = displayTable;
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Không thể load danh sách khoa.\n{ex.Message}", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Xác định Site dựa trên tên khoa hoặc mã khoa
+        /// </summary>
+        private string DetermineSiteFromKhoa(string maKhoa, string tenKhoa)
+        {
+            if (string.IsNullOrWhiteSpace(tenKhoa) && string.IsNullOrWhiteSpace(maKhoa))
+                return "Site1"; // Default
+
+            // Site1: CNTT
+            if (maKhoa?.Equals("CNTT", StringComparison.OrdinalIgnoreCase) == true ||
+                tenKhoa?.Contains("CNTT", StringComparison.OrdinalIgnoreCase) == true ||
+                tenKhoa?.Contains("Công nghệ thông tin", StringComparison.OrdinalIgnoreCase) == true)
+            {
+                return "Site1";
+            }
+
+            // Site2: Ngôn ngữ Anh
+            if (tenKhoa?.Equals("Ngôn ngữ Anh", StringComparison.OrdinalIgnoreCase) == true ||
+                tenKhoa?.Contains("Ngôn ngữ Anh", StringComparison.OrdinalIgnoreCase) == true ||
+                tenKhoa?.Contains("English Language", StringComparison.OrdinalIgnoreCase) == true)
+            {
+                return "Site2";
+            }
+            
+            // Site3: Quản trị kinh doanh / Business Administration
+            if (tenKhoa?.Equals("Quản trị kinh doanh", StringComparison.OrdinalIgnoreCase) == true ||
+                tenKhoa?.Contains("Quản trị kinh doanh", StringComparison.OrdinalIgnoreCase) == true ||
+                tenKhoa?.Contains("Business Administration", StringComparison.OrdinalIgnoreCase) == true)
+            {
+                return "Site3";
+            }
+            
+            return "Site1"; // Default
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -53,7 +112,6 @@ namespace QL_HP_DT_SV.Login
         {
             string username = txtUsername.Text?.Trim();
             string password = txtPassword.Text; // giữ nguyên phân biệt ký tự
-            string maKhoa = cb_chonnganh.SelectedValue?.ToString(); // ví dụ "CNTT"
 
             // Kiểm tra đầu vào
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
@@ -62,15 +120,39 @@ namespace QL_HP_DT_SV.Login
                                 "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (!string.Equals(maKhoa, "CNTT", StringComparison.OrdinalIgnoreCase))
+
+            if (cb_chonnganh.SelectedValue == null)
             {
-                MessageBox.Show("Site 1 chỉ cho phép đăng nhập khi chọn ngành Công nghệ thông tin (CNTT).",
-                                "Sai ngành", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn ngành học.",
+                                "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Dựng chuỗi kết nối SQL Authentication từ user/password nhập vào
-            string connStr = Helpers.BuildSqlAuthConnection(username, password);
+            // Lấy thông tin khoa được chọn
+            var selectedRow = cb_chonnganh.SelectedItem as DataRowView;
+            if (selectedRow == null)
+            {
+                MessageBox.Show("Không thể lấy thông tin khoa được chọn.",
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string maKhoa = selectedRow["MaKhoa"]?.ToString();
+            string tenKhoa = selectedRow["TenKhoa"]?.ToString();
+            string site = DetermineSiteFromKhoa(maKhoa, tenKhoa);
+
+            // Dựng chuỗi kết nối SQL Authentication từ user/password nhập vào cho site tương ứng
+            string connStr;
+            try
+            {
+                connStr = Helpers.BuildSqlAuthConnection(username, password, site);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Không thể tạo kết nối đến {site}.\n{ex.Message}",
+                                "Lỗi kết nối", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             try
             {
@@ -78,17 +160,19 @@ namespace QL_HP_DT_SV.Login
                 {
                     await conn.OpenAsync();
 
-                    // Test quyền & đúng DB bằng cách gọi 1 SP có sẵn (hoặc SELECT đơn giản)
-                    using (var cmd = new SqlCommand("dbo.sp_GetKhoaByID", conn))
+                    // Kiểm tra khoa có tồn tại trong site không
+                    string checkSql = @"SELECT TOP 1 RTRIM(MaKhoa) AS MaKhoa, TenKhoa 
+                                       FROM dbo.Khoa 
+                                       WHERE RTRIM(MaKhoa) = @MaKhoa";
+                    
+                    using (var cmd = new SqlCommand(checkSql, conn))
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@MaKhoa", "CNTT");
-
+                        cmd.Parameters.AddWithValue("@MaKhoa", maKhoa?.Trim() ?? "");
                         using (var reader = await cmd.ExecuteReaderAsync())
                         {
                             if (!reader.HasRows)
                             {
-                                MessageBox.Show("Không tìm thấy Khoa CNTT trong CSDLPT_SITE1.",
+                                MessageBox.Show($"Không tìm thấy khoa '{tenKhoa}' trong {site}.",
                                                 "Sai dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return;
                             }
@@ -96,35 +180,42 @@ namespace QL_HP_DT_SV.Login
                     }
                 }
 
-                // Nếu tới đây: mở được kết nối bằng user/password + SP chạy OK => ĐĂNG NHẬP THÀNH CÔNG
+                // ĐĂNG NHẬP THÀNH CÔNG
                 
                 // Lưu thông tin session
                 Session.ConnectionString = connStr;
                 Session.CurrentUserName = username;
+                Session.CurrentSite = site;
+                Session.CurrentMaKhoa = maKhoa;
+                Session.CurrentTenKhoa = tenKhoa;
                 
                 // Kiểm tra quyền của user để xác định vai trò
                 string userRole = await GetUserRoleAsync(connStr, username);
                 Session.CurrentUserRole = userRole;
                 Session.IsAdmin = userRole == "db_owner" || userRole == "db_securityadmin";
 
-                // Hiển thị dashboard tương ứng với vai trò
-                if (Session.IsAdmin)
+                // Đóng form đăng nhập
+                this.Hide();
+
+                // Mở dashboard tương ứng với site
+                Form dashboard = null;
+                if (site == "Site1")
                 {
-                    var dashboard = new AdminMainDashboard();
-                    dashboard.StartPosition = FormStartPosition.CenterScreen;
-                    dashboard.Show();
-                    this.Hide(); // ẩn form Login
+                    dashboard = new AdminDashboard();
                 }
-                else
+                else if (site == "Site2")
                 {
-                    // Mở AdminDashboard cho các role khác (có thể xem và quản lý sinh viên)
-                    MessageBox.Show($"Chào mừng {username}! Vai trò: {userRole}",
-                        "Đăng nhập thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
-                    var dashboard = new AdminDashboard();
-                    dashboard.StartPosition = FormStartPosition.CenterScreen;
+                    dashboard = new Site2Dashboard();
+                }
+                else if (site == "Site3")
+                {
+                    dashboard = new Site3Dashboard();
+                }
+
+                if (dashboard != null)
+                {
+                    dashboard.FormClosed += (s, args) => this.Close(); // Đóng app khi đóng dashboard
                     dashboard.Show();
-                    this.Hide(); // ẩn form Login
                 }
             }
             catch (SqlException sqlEx)
